@@ -7,7 +7,8 @@ def is_mask(mask):
 def is_ip(ip_in, mask=""):
     if mask == "":
         try:
-            return ipaddress.ip_address(ip_in)
+            return True
+            #return ipaddress.ip_address(ip_in)
         except ValueError: 
             try:
                 return ip_interface(ip_in)
