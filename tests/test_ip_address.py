@@ -2,7 +2,7 @@ import pytest
 import ipaddress
 import mypkg.ip_address
 
-@pytest.mark.parametrize(('ip', 'mask'), [("10.0.0.1", ""), ("10.0.0.1", "24"), ("10.0.0.1", "/24"), ("10.0.0.1", "255.255.255.0"), ("10.0.0.0", "")])
+@pytest.mark.parameterize(('ip', 'mask'), [("10.0.0.1", ""), ("10.0.0.1", "24"), ("10.0.0.1", "/24"), ("10.0.0.1", "255.255.255.0"), ("10.0.0.0", "")])
 def test_get_ip_ipv4(ip, mask):
 	pytest.assume(ipaddress.ip_address(ip) == get_ip(ip))
 	pytest.assume(ipaddress.ip_interface(ip, "/" + mask) == get_ip(ip, mask))
