@@ -1,6 +1,6 @@
 import pytest
 import ipaddress
-import ../src.mypkg.ip_address
+import mypkg.ip_address
 
 @pytest.mark.parametrize(('ip', 'mask'), [("10.0.0.1", ""), ("10.0.0.1", "24"), ("10.0.0.1", "/24"), ("10.0.0.1", "255.255.255.0"), ("10.0.0.0", "")])
 def test_get_ip_ipv4(ip, mask):
@@ -11,3 +11,4 @@ def test_get_ip_ipv4(ip, mask):
 	pytest.assume(not get_ip(ip))
 	
 def test_get_ip_ipv6(ip, mask):
+	return 0
